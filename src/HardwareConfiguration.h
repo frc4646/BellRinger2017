@@ -7,8 +7,8 @@
 
 #include "PinEnums.h"
 
-#ifndef HARDWARECONFIGURATION_H_
-#define HARDWARECONFIGURATION_H_
+#ifndef HARDWARECONFIGURATION_H
+#define HARDWARECONFIGURATION_H
 
 
 // BEGIN Mecanum config
@@ -18,4 +18,4 @@ MotorPin backLeft = M3;
 MotorPin backRight = M4;
 // END Mecanum config
 
-#endif /* SRC_HARDWARECONFIGURATION_H_ */
+#endif /* HARDWARECONFIGURATION_H */
