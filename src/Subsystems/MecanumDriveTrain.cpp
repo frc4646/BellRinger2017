@@ -3,12 +3,12 @@
 
 MecanumDriveTrain::MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, MotorPin w4) :
 	Subsystem("MecanumDriveTrain"),
-	wheel1(w1),
-	wheel2(w2),
-	wheel3(w3),
-	wheel4(w4),
+	frontleftwheel(w1),
+	frontrightwheel(w2),
+	backrightwheel(w3),
+	backrightwheel(w4),
 	Gyro(),
-	rb(wheel1, wheel2, wheel3, wheel4) {
+	robotdrive(frontleftwheel, frontrightwheel, backrightwheel, backrightwheel) {
 	Gyro.Calibrate();
 }
 
@@ -22,11 +22,15 @@ void MecanumDriveTrain::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void MecanumDriveTrain::JoyDrive(Joystick &rotation, Joystick &movement) {
-	rb->MecanumDrive_Cartesian(movement.GetRawAxis(0) * -1.0, rotation.GetRawAxis(0) * -1.0, movement.GetRawAxis(1) * -1.0, GetHeading())
+	robotdrive->MecanumDrive_Cartesian(movement.GetRawAxis(0) * -1.0, rotation.GetRawAxis(0) * -1.0, movement.GetRawAxis(1) * -1.0, GetHeading())
 }
 
 void MecanumDriveTrain::AutoDrive(double x, double y, double rot) {
-	rb->MecanumDrive_Cartesian(x, rot, y, GetHeading());
+	robotdrive->MecanumDrive_Cartesian(x, rot, y, GetHeading());
+}
+
+void MecanumDriveTrain::DriveInDirection(double speed, double theta) {
+	robotdrive->MecanumDrive_Polar(speed, theta, GetHeading());
 }
 
 double MecanumDriveTrain::GetHeading() {
@@ -34,10 +38,10 @@ double MecanumDriveTrain::GetHeading() {
 }
 
 void MecanumDriveTrain::STAHP() {
-	wheel1.Set(0.0);
-	wheel2.Set(0.0);
-	wheel3.Set(0.0);
-	wheel4.Set(0.0);
+	frontleftwheel.Set(0.0);
+	frontrightwheel.Set(0.0);
+	backleftwheel.Set(0.0);
+	backrightwheel.Set(0.0);
 }
 
 void MecanumDriveTrain::Stop() {
