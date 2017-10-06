@@ -1,3 +1,5 @@
+#include "PinEnums.h"
+
 #ifndef ROBOTMAP_H
 #define ROBOTMAP_H
 
@@ -17,5 +19,12 @@
 // number and the module. For example you with a rangefinder:
 // constexpr int RANGE_FINDER_PORT = 1;
 // constexpr int RANGE_FINDER_MODULE = 1;
+
+// BEGIN Mecanum config
+MotorPin frontleft = M1;
+MotorPin frontRight = M2;
+MotorPin backLeft = M3;
+MotorPin backRight = M4;
+// END Mecanum config
 
 #endif  // ROBOTMAP_H
