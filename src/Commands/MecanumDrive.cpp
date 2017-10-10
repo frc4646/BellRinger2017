@@ -1,13 +1,21 @@
 #include "MecanumDrive.h"
+#include "WPILib.h"
+#include "Subsystems/MecanumDriveTrain.h"
+#include "../PinEnums.h"
 
-MecanumDrive::MecanumDrive() {
+
+
+MecanumDrive::MecanumDrive()
+: CommandBase("MecanumDrive")
+{
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
+
 }
 
 // Called just before this Command runs the first time
 void MecanumDrive::Initialize() {
-
+	MecanumDriveTrain->MecanumDrive(M1, M2, M3, M4);
 }
 
 // Called repeatedly when this Command is scheduled to run
