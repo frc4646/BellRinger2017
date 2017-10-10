@@ -12,8 +12,12 @@ MecanumDriveTrain::MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, Moto
 	gyro(),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	robotdrive(frontleftwheel, frontrightwheel, backleftwheel, backrightwheel)
 {
+=======
+	robotdrive(w1, w2, w3, w4){
+>>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
 =======
 	robotdrive(w1, w2, w3, w4){
 >>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
