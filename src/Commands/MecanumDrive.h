@@ -2,6 +2,7 @@
 #define MecanumDrive_H
 
 #include "../CommandBase.h"
+#include "WPILib.h"
 
 class MecanumDrive : public CommandBase {
 public:
