@@ -1,6 +1,8 @@
 #ifndef ROBOTMAP_H
 #define ROBOTMAP_H
 
+#include "PinEnums.h"
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -17,5 +19,12 @@
 // number and the module. For example you with a rangefinder:
 // constexpr int RANGE_FINDER_PORT = 1;
 // constexpr int RANGE_FINDER_MODULE = 1;
+
+// BEGIN mecanum
+constexpr MotorPin frontLeft = M1;
+constexpr MotorPin frontRight = M2;
+constexpr MotorPin backLeft = M3;
+constexpr MotorPin backRight = M4;
+// END mecanum
 
 #endif  // ROBOTMAP_H

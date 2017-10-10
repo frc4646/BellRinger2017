@@ -1,11 +1,11 @@
-#ifndef MecanumDrive_H
-#define MecanumDrive_H
+#ifndef NullAuto_H
+#define NullAuto_H
 
 #include "../CommandBase.h"
 
-class MecanumDrive : public CommandBase {
+class NullAuto : public CommandBase {
 public:
-	MecanumDrive();
+	NullAuto();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
@@ -13,4 +13,4 @@ public:
 	void Interrupted();
 };
 
-#endif  // MecanumDrive_H
+#endif  // NullAuto_H

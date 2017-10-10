@@ -9,14 +9,14 @@ OI::OI() :
 	// Process operator interface input here.
 }
 
-Joystick OI::getLeftJoystick() {
+Joystick& OI::getLeftJoystick() {
 	return left;
 }
 
-Joystick OI::getRightJoystick() {
+Joystick& OI::getRightJoystick() {
 	return right;
 }
 
-Joystick OI::getMechanism() {
+Joystick& OI::getMechanism() {
 	return mechanism;
 }

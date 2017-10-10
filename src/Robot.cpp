@@ -7,13 +7,14 @@
 #include <SmartDashboard/SendableChooser.h>
 #include <SmartDashboard/SmartDashboard.h>
 
-#include "Commands/ExampleCommand.h"
+#include "AutoCommands/NullAuto.h"
 #include "CommandBase.h"
 
 class Robot: public frc::IterativeRobot {
 public:
 	void RobotInit() override {
-		chooser.AddDefault("Default Auto", new ExampleCommand());
+		CommandBase::init();
+		chooser.AddDefault("Sit and do nothing", new NullAuto());
 		// chooser.AddObject("My Auto", new MyAutoCommand());
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
 	}

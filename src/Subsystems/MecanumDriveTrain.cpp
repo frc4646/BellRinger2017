@@ -7,9 +7,9 @@ MecanumDriveTrain::MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, Moto
 	frontrightwheel(w2),
 	backrightwheel(w3),
 	backrightwheel(w4),
-	Gyro(),
-	robotdrive(frontleftwheel, frontrightwheel, backrightwheel, backrightwheel) {
-	Gyro.Calibrate();
+	gyro(),
+	robotdrive(w1, w2, w3, w4) {
+	gyro.Calibrate();
 }
 
 void MecanumDriveTrain::InitDefaultCommand() {
@@ -21,8 +21,8 @@ void MecanumDriveTrain::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
-void MecanumDriveTrain::JoyDrive(Joystick &rotation, Joystick &movement) {
-	robotdrive->MecanumDrive_Cartesian(movement.GetRawAxis(0) * -1.0, rotation.GetRawAxis(0) * -1.0, movement.GetRawAxis(1) * -1.0, GetHeading())
+void MecanumDriveTrain::JoyDrive(Joystick& rotation, Joystick& movement) {
+	robotdrive->MecanumDrive_Cartesian(movement.GetRawAxis(0) * -1.0, rotation.GetRawAxis(0) * -1.0, movement.GetRawAxis(1) * -1.0, GetHeading());
 }
 
 void MecanumDriveTrain::AutoDrive(double x, double y, double rot) {
@@ -34,7 +34,7 @@ void MecanumDriveTrain::DriveInDirection(double speed, double theta) {
 }
 
 double MecanumDriveTrain::GetHeading() {
-	return -Gyro.GetAngle();
+	return gyro.GetAngle();
 }
 
 void MecanumDriveTrain::STAHP() {
