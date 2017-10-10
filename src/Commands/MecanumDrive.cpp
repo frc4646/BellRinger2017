@@ -13,22 +13,8 @@ MecanumDrive::MecanumDrive() :
 
 // Called just before this Command runs the first time
 void MecanumDrive::Initialize() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	mecanum->Stop();
-=======
 	mecanum->STAHP();
 	mecanum->ResetGyro();
->>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
-=======
-	mecanum->STAHP();
-	mecanum->ResetGyro();
->>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
-=======
-	mecanum->STAHP();
-	mecanum->ResetGyro();
->>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
 }
 
 // Called repeatedly when this Command is scheduled to run

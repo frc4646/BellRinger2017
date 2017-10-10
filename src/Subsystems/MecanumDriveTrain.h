@@ -19,16 +19,6 @@ private:
 	Spark backrightwheel;
 	ADXRS450_Gyro gyro;
 	RobotDrive robotdrive;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
-=======
->>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
-=======
->>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
 
 public:
 	MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, MotorPin w4);
