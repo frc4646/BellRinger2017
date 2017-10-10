@@ -1,19 +1,7 @@
 #include "MecanumDrive.h"
-<<<<<<< HEAD
 #include "WPILib.h"
 #include "Subsystems/MecanumDriveTrain.h"
 #include "../PinEnums.h"
-
-
-
-MecanumDrive::MecanumDrive()
-: CommandBase("MecanumDrive")
-{
-	// Use Requires() here to declare subsystem dependencies
-	// eg. Requires(Robot::chassis.get());
-
-=======
-#include "Subsystems/MecanumDriveTrain.h"
 #include "OI.h"
 
 MecanumDrive::MecanumDrive() :
@@ -21,12 +9,21 @@ MecanumDrive::MecanumDrive() :
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(mecanum.get());
->>>>>>> 06341ac7d4b8fb93b2be716f5eab52b028fb013f
 }
 
 // Called just before this Command runs the first time
 void MecanumDrive::Initialize() {
-	MecanumDriveTrain->MecanumDrive(M1, M2, M3, M4);
+<<<<<<< HEAD
+<<<<<<< HEAD
+	mecanum->Stop();
+=======
+	mecanum->STAHP();
+	mecanum->ResetGyro();
+>>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
+=======
+	mecanum->STAHP();
+	mecanum->ResetGyro();
+>>>>>>> ea91d31369dc294b490d36a3cba17e874e87c11a
 }
 
 // Called repeatedly when this Command is scheduled to run
