@@ -5,9 +5,9 @@
 #include <string>
 
 #include <Commands/Command.h>
-
-#include "OI.h"
 #include "Subsystems/MecanumDriveTrain.h"
+#include "OI.h"
+#include "Subsystems/RingerSystem.h"
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -25,6 +25,7 @@ public:
 	// Create a single static instance of all of your subsystems
 	static std::unique_ptr<MecanumDriveTrain> mecanum;
 	static std::unique_ptr<OI> oi;
+	static std::unique_ptr<RingerSystem> ringer;
 };
 
 #endif  // COMMAND_BASE_H

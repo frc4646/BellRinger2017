@@ -25,6 +25,7 @@ constexpr MotorPin frontLeft = M1;
 constexpr MotorPin frontRight = M2;
 constexpr MotorPin backLeft = M3;
 constexpr MotorPin backRight = M4;
+constexpr MotorPin ringer = M5;
 // END mecanum
 
 #endif  // ROBOTMAP_H

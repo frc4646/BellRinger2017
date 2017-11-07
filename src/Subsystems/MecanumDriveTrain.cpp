@@ -1,7 +1,6 @@
+#include <Commands/MecanumDrive.h>
 #include <Subsystems/MecanumDriveTrain.h>
-#include <Commands/MecanumDrive.h>
 #include "../RobotMap.h"
-#include <Commands/MecanumDrive.h>
 
 MecanumDriveTrain::MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, MotorPin w4) :
 	Subsystem("MecanumDriveTrain"),

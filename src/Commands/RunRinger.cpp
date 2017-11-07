@@ -1,39 +1,39 @@
-#include "MecanumDrive.h"
-#include <Subsystems/MecanumDriveTrain.h>
+#include "RunRinger.h"
 #include "WPILib.h"
+#include "Subsystems/RingerSystem.h"
 #include "../PinEnums.h"
 #include "OI.h"
+#include "CommandBase.h"
 
-MecanumDrive::MecanumDrive() :
-	CommandBase("MecanumDriveTrain") {
+RunRinger::RunRinger():
+	CommandBase("RingerSystem"){
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
-	Requires(mecanum.get());
+	Requires(ringer.get());
 }
 
 // Called just before this Command runs the first time
-void MecanumDrive::Initialize() {
-	mecanum->STAHP();
-	mecanum->ResetGyro();
+void RunRinger::Initialize() {
+
 }
 
 // Called repeatedly when this Command is scheduled to run
-void MecanumDrive::Execute() {
-	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick());
+void RunRinger::Execute() {
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool MecanumDrive::IsFinished() {
+bool RunRinger::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void MecanumDrive::End() {
-	mecanum->STAHP();
+void RunRinger::End() {
+
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void MecanumDrive::Interrupted() {
-	End();
+void RunRinger::Interrupted() {
+
 }
