@@ -14,12 +14,17 @@ RunRinger::RunRinger():
 
 // Called just before this Command runs the first time
 void RunRinger::Initialize() {
-
+	ringer->SetRingerSpeed(0);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void RunRinger::Execute() {
-
+	if (oi->getMechanismJoystick().GetTrigger()){
+		ringer->SetRingerSpeed(1);
+	}
+	else{
+		ringer->SetRingerSpeed(0);
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()

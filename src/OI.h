@@ -12,7 +12,7 @@ public:
 	OI();
 	Joystick& getLeftJoystick();
 	Joystick& getRightJoystick();
-	Joystick& getMechanism();
+	Joystick& getMechanismJoystick();
 };
 
 #endif  // OI_H

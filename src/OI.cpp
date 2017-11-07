@@ -17,6 +17,6 @@ Joystick& OI::getRightJoystick() {
 	return right;
 }
 
-Joystick& OI::getMechanism() {
+Joystick& OI::getMechanismJoystick() {
 	return mechanism;
 }
