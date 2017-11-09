@@ -13,13 +13,14 @@ MecanumDrive::MecanumDrive() :
 
 // Called just before this Command runs the first time
 void MecanumDrive::Initialize() {
-	mecanum->STAHP();
+	mecanum->Stop();
 	mecanum->ResetGyro();
 }
 
 // Called repeatedly when this Command is scheduled to run
 void MecanumDrive::Execute() {
 	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick());
+	frc::SmartDashboard::PutNumber("Heading", mecanum->GetHeading());
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -29,7 +30,7 @@ bool MecanumDrive::IsFinished() {
 
 // Called once after isFinished returns true
 void MecanumDrive::End() {
-	mecanum->STAHP();
+	mecanum->Stop();
 }
 
 // Called when another command which requires one or more of the same

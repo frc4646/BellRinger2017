@@ -15,7 +15,7 @@ private:
 public:
 	RingerSystem(MotorPin r);
 	void InitDefaultCommand();
-	void SetRingerSpeed(double speed);
+	void SetRingerSpeed(float speed);
 };
 
 #endif  // RingerSystem_H

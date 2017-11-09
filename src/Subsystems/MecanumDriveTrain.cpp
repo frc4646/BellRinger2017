@@ -43,13 +43,9 @@ void MecanumDriveTrain::ResetGyro() {
 	gyro.Reset();
 }
 
-void MecanumDriveTrain::STAHP() {
+void MecanumDriveTrain::Stop() {
 	frontleftwheel.Set(0.0);
 	frontrightwheel.Set(0.0);
 	backleftwheel.Set(0.0);
 	backrightwheel.Set(0.0);
-}
-
-void MecanumDriveTrain::Stop() {
-	STAHP();
 }

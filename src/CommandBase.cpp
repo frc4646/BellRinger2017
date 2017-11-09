@@ -1,7 +1,7 @@
 #include "CommandBase.h"
 
 #include <Commands/Scheduler.h>
-#include <Subsystems/MecanumDriveTrain.h>
+#include "Subsystems/MecanumDriveTrain.h"
 #include "RobotMap.h"
 #include "Subsystems/RingerSystem.h"
 
@@ -22,4 +22,5 @@ CommandBase::CommandBase(const std::string &name) :
 void CommandBase::init() {
 	mecanum.reset(new MecanumDriveTrain(frontLeft, frontRight, backLeft, backRight));
 	oi.reset(new OI());
+	ringer.reset(new RingerSystem(ringerPin));
 }

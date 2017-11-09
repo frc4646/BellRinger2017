@@ -17,6 +17,7 @@ void RingerSystem::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void RingerSystem::SetRingerSpeed(double speed) {
-	ringerMotor.Set(static_cast<float>(speed));
+void RingerSystem::SetRingerSpeed(float speed) {
+	ringerMotor.Set(speed);
 }
+

@@ -28,7 +28,6 @@ public:
 	void DriveInDirection(double speed, double theta);
 	double GetHeading();
 	void ResetGyro();
-	void STAHP();
 	void Stop();
 };
 
