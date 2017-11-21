@@ -1,6 +1,6 @@
 #include "RunXylo.h"
 #include "WPILib.h"
-#include "Subsystems/RingerSystem.h"
+#include "Subsystems/XyloSystem.h"
 #include "../PinEnums.h"
 #include "OI.h"
 #include "CommandBase.h"
@@ -24,7 +24,7 @@ void RunXylo::Execute() {
 		xylo->SetXyloSpeed(1);
 	}
 	else{
-		ringer->SetRingerSpeed(0);
+		xylo->SetXyloSpeed(0);
 	}
 }
 
