@@ -1,5 +1,5 @@
-#ifndef RingerSystem_H
-#define RingerSystem_H
+#ifndef XyloSystem_H
+#define XyloSystem_H
 
 
 #include "WPILib.h"
@@ -7,16 +7,16 @@
 #include "Spark.h"
 #include <Commands/Subsystem.h>
 
-class RingerSystem : public Subsystem {
+class XyloSystem : public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Spark ringerMotor;
+	Spark xyloMotor;
 
 public:
-	RingerSystem(MotorPin r);
+	XyloSystem(MotorPin x);
 	void InitDefaultCommand();
-	void SetRingerSpeed(float speed);
+	void SetXyloSpeed(float speed);
 };
 
-#endif  // RingerSystem_H
+#endif  // XyloSystem_H

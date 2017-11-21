@@ -4,6 +4,7 @@
 #include "Subsystems/MecanumDriveTrain.h"
 #include "RobotMap.h"
 #include "Subsystems/RingerSystem.h"
+#include "Subsystems/XyloSystem.h"
 
 // Initialize a single static instance of all of your subsystems. The following
 // line should be repeated for each subsystem in the project.
@@ -13,6 +14,7 @@
 std::unique_ptr<OI> CommandBase::oi = NULL;
 std::unique_ptr<MecanumDriveTrain> CommandBase::mecanum = NULL;
 std::unique_ptr<RingerSystem> CommandBase::ringer = NULL;
+std::unique_ptr<XyloSystem> CommandBase::xylo = NULL;
 
 CommandBase::CommandBase(const std::string &name) :
 		frc::Command(name) {

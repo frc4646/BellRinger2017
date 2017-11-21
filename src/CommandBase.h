@@ -8,6 +8,7 @@
 #include "Subsystems/MecanumDriveTrain.h"
 #include "OI.h"
 #include "Subsystems/RingerSystem.h"
+#include "Subsystems/XyloSystem.h"
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -26,6 +27,7 @@ public:
 	static std::unique_ptr<MecanumDriveTrain> mecanum;
 	static std::unique_ptr<OI> oi;
 	static std::unique_ptr<RingerSystem> ringer;
+	static std::unique_ptr<XyloSystem> xylo;
 };
 
 #endif  // COMMAND_BASE_H
