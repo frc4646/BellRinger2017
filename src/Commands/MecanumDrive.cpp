@@ -14,16 +14,30 @@ MecanumDrive::MecanumDrive() :
 // Called just before this Command runs the first time
 void MecanumDrive::Initialize() {
 	// Tell mecanum to stop.
+	/*
+	 * This line basically tells mecanum to run it's "Stop()" method with no arguments.
+	 */
 	mecanum->Stop();
 	// Reset the gyro.
+	/*
+	 * This line also talks to mecanum, but it tells it to run it's "ResetGyro()" method with no arguments.
+	 */
 	mecanum->ResetGyro();
 }
 
 // Called repeatedly when this Command is scheduled to run
 void MecanumDrive::Execute() {
 	// Tell mecanum joydrive method to run with joysticks.
+	/*
+	 * Like the above commands, this also talks to the mecanum subsystem. This time it actually
+	 * runs the drivetrain by passing the joysticks (provided by the OI subsystem) as arguments.
+	 */
 	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick());
 	// Put the gyro heading on smart dashboard.
+	/*
+	 * This time, we talk to the frc class, then the SmartDashboard "subclass", and then run the PutNumber
+	 * method.
+	 */
 	frc::SmartDashboard::PutNumber("Heading", mecanum->GetHeading());
 }
 
@@ -35,6 +49,9 @@ bool MecanumDrive::IsFinished() {
 // Called once after isFinished returns true
 void MecanumDrive::End() {
 	// Tell mecanum to stop when the robot is disabled in case the joysticks are tilted when we disable.
+	/*
+	 * I kinda told you about this above. Look up.
+	 */
 	mecanum->Stop();
 }
 
@@ -42,5 +59,8 @@ void MecanumDrive::End() {
 // subsystems is scheduled to run
 void MecanumDrive::Interrupted() {
 	// Ditto the comment in End.
+	/*
+	 * Seriously, look up!
+	 */
 	End();
 }
