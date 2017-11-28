@@ -15,15 +15,20 @@ RunXylo::RunXylo():
 
 // Called just before this Command runs the first time
 void RunXylo::Initialize() {
+	// Set xylo speed to 0.
 	xylo->SetXyloSpeed(0);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void RunXylo::Execute() {
+	// If statement to control xylo.
 	if (oi->getMechanismJoystick().GetRawButton(2)){
+		// Set xylo speed to 1.
 		xylo->SetXyloSpeed(1);
 	}
+	// OTHERWISE...
 	else{
+		// Set xylo speed to 0.
 		xylo->SetXyloSpeed(0);
 	}
 }
@@ -35,7 +40,8 @@ bool RunXylo::IsFinished() {
 
 // Called once after isFinished returns true
 void RunXylo::End() {
-
+	// Set xylo speed to 0.
+	xylo->SetXyloSpeed(0);
 }
 
 // Called when another command which requires one or more of the same

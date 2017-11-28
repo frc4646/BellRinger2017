@@ -13,13 +13,17 @@ MecanumDrive::MecanumDrive() :
 
 // Called just before this Command runs the first time
 void MecanumDrive::Initialize() {
+	// Tell mecanum to stop.
 	mecanum->Stop();
+	// Reset the gyro.
 	mecanum->ResetGyro();
 }
 
 // Called repeatedly when this Command is scheduled to run
 void MecanumDrive::Execute() {
+	// Tell mecanum joydrive method to run with joysticks.
 	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick());
+	// Put the gyro heading on smart dashboard.
 	frc::SmartDashboard::PutNumber("Heading", mecanum->GetHeading());
 }
 
@@ -30,11 +34,13 @@ bool MecanumDrive::IsFinished() {
 
 // Called once after isFinished returns true
 void MecanumDrive::End() {
+	// Tell mecanum to stop when the robot is disabled in case the joysticks are tilted when we disable.
 	mecanum->Stop();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void MecanumDrive::Interrupted() {
+	// Ditto the comment in End.
 	End();
 }

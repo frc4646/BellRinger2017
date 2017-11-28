@@ -14,14 +14,18 @@ RunRinger::RunRinger():
 
 // Called just before this Command runs the first time
 void RunRinger::Initialize() {
+	// Set ringer speed to 0.
 	ringer->SetRingerSpeed(0);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void RunRinger::Execute() {
+	// If statement to control ringer based on trigger input.
 	if (oi->getMechanismJoystick().GetTrigger()){
+		// Set the ringer speed to 1.
 		ringer->SetRingerSpeed(1);
 	}
+	// OTHERWISE...
 	else{
 		ringer->SetRingerSpeed(0);
 	}
@@ -34,6 +38,7 @@ bool RunRinger::IsFinished() {
 
 // Called once after isFinished returns true
 void RunRinger::End() {
+	// Set the ringer speed to 0.
 	ringer->SetRingerSpeed(0);
 }
 
