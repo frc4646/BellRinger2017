@@ -21,6 +21,8 @@ void RunRinger::Initialize() {
 	 * make it NOT run very quickly! :D
 	 */
 	ringer->SetRingerSpeed(0);
+
+
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -32,13 +34,31 @@ void RunRinger::Execute() {
 	 * this combo, we couldn't even run the ringer. Well, if we were missing the second part (the else
 	 * statement), we would not be able to stop the ringer. Ever. Which would be unfortunate.
 	 */
-	if (oi->getMechanismJoystick().GetTrigger()){
-		// Set the ringer speed to 1.
-		ringer->SetRingerSpeed((oi->getMechanismJoystick().GetThrottle() / 2));
+	// Set this to 0 for DS controls, 1 for gamepad controls.
+	int robotmode = 1;
+	if (robotmode == 0) {
+		if (oi->getMechanismJoystick().GetTrigger()){
+				// Set the ringer speed to 1.
+				ringer->SetRingerSpeed((oi->getMechanismJoystick().GetThrottle() / 2));
+			}
+			// OTHERWISE...
+			else {
+				ringer->SetRingerSpeed(0);
+			}
 	}
-	// OTHERWISE...
-	else{
-		ringer->SetRingerSpeed(0);
+	if (robotmode == 1) {
+		if (oi->getLeftJoystick().GetRawButton(0)){
+			ringer->SetRingerSpeed(0.25);
+		} else if (oi->getLeftJoystick().GetRawButton(1)){
+			ringer->SetRingerSpeed(0.4);
+		} else if (oi->getLeftJoystick().GetRawButton(2)){
+			ringer->SetRingerSpeed(0.75);
+		} else if (oi->getLeftJoystick().GetRawButton(3)){
+			ringer->SetRingerSpeed(1);
+		}
+		else {
+			ringer->SetRingerSpeed(0);
+		}
 	}
 }
 

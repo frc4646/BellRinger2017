@@ -23,7 +23,7 @@ private:
 public:
 	MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, MotorPin w4);
 	void InitDefaultCommand();
-	void JoyDrive(Joystick& rotation, Joystick& movement);
+	void JoyDrive(Joystick& rotation, Joystick& movement, int mode);
 	void AutoDrive(double x, double y, double rot);
 	void DriveInDirection(double speed, double theta);
 	double GetHeading();
