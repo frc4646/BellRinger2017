@@ -34,7 +34,7 @@ void RunRinger::Execute() {
 	 */
 	if (oi->getMechanismJoystick().GetTrigger()){
 		// Set the ringer speed to 1.
-		ringer->SetRingerSpeed(1);
+		ringer->SetRingerSpeed((oi->getMechanismJoystick().GetThrottle() / 2));
 	}
 	// OTHERWISE...
 	else{

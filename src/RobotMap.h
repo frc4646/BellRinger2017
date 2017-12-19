@@ -21,14 +21,14 @@
 // constexpr int RANGE_FINDER_MODULE = 1;
 
 // BEGIN mecanum
-constexpr MotorPin frontLeft = M1;
-constexpr MotorPin frontRight = M2;
-constexpr MotorPin backLeft = M3;
-constexpr MotorPin backRight = M4;
+constexpr MotorPin frontLeft = M0;
+constexpr MotorPin frontRight = M1;
+constexpr MotorPin backLeft = M2;
+constexpr MotorPin backRight = M3;
 
-constexpr MotorPin ringerPin = M5;
+constexpr MotorPin ringerPin = M4;
 
-constexpr MotorPin xyloPin = M6;
+constexpr MotorPin xyloPin = M5;
 // END mecanum
 
 #endif  // ROBOTMAP_H

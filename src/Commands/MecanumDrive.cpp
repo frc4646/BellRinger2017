@@ -33,6 +33,7 @@ void MecanumDrive::Execute() {
 	 * runs the drivetrain by passing the joysticks (provided by the OI subsystem) as arguments.
 	 */
 	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick());
+	//mecanum->JoyDrive(oi->getLeftJoystick(), oi->getLeftJoystick());
 	// Put the gyro heading on smart dashboard.
 	/*
 	 * This time, we talk to the frc class, then the SmartDashboard "subclass", and then run the PutNumber
