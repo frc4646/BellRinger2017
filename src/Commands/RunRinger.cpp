@@ -47,14 +47,14 @@ void RunRinger::Execute() {
 			}
 	}
 	if (robotmode == 1) {
-		if (oi->getLeftJoystick().GetRawButton(0)){
-			ringer->SetRingerSpeed(0.25);
+		if (oi->getLeftJoystick().GetRawButton(2)){
+			ringer->SetRingerSpeed(-0.25);
+		} else if (oi->getLeftJoystick().GetRawButton(0)){
+			ringer->SetRingerSpeed(-0.3);
 		} else if (oi->getLeftJoystick().GetRawButton(1)){
-			ringer->SetRingerSpeed(0.4);
-		} else if (oi->getLeftJoystick().GetRawButton(2)){
-			ringer->SetRingerSpeed(0.75);
-		} else if (oi->getLeftJoystick().GetRawButton(3)){
-			ringer->SetRingerSpeed(1);
+			ringer->SetRingerSpeed(-0.4);
+		} else if (oi->getLeftJoystick().GetRawButton(3) && oi->getLeftJoystick().GetRawButton(0)){
+			ringer->SetRingerSpeed(-1);
 		}
 		else {
 			ringer->SetRingerSpeed(0);

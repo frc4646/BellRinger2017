@@ -20,5 +20,5 @@ void XyloSystem::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void XyloSystem::SetXyloSpeed(float speed) {
-	xyloMotor.SetSpeed(speed);
+	xyloMotor.Set(speed);
 }

@@ -23,12 +23,12 @@ void MecanumDriveTrain::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
-void MecanumDriveTrain::JoyDrive(Joystick& rotation, Joystick& movement, int mode) {
+void MecanumDriveTrain::JoyDrive(Joystick& rotation, Joystick& movement, int mode, int speed) {
 	if (mode == 1){
-		robotdrive.MecanumDrive_Cartesian(movement.GetRawAxis(0), movement.GetRawAxis(1), movement.GetRawAxis(4), GetHeading());
+		robotdrive.MecanumDrive_Cartesian(movement.GetRawAxis(0) * speed, movement.GetRawAxis(1) * speed, movement.GetRawAxis(2) * speed, GetHeading());
 	}
 	else {
-		robotdrive.MecanumDrive_Cartesian(movement.GetRawAxis(0) * -1.0, movement.GetRawAxis(1) * -1.0, rotation.GetRawAxis(0) * -1.0, GetHeading());
+		robotdrive.MecanumDrive_Cartesian(movement.GetRawAxis(0) * speed, movement.GetRawAxis(1) * speed, rotation.GetRawAxis(0) * speed, GetHeading());
 	}
 	//robotdrive.MecanumDrive_Cartesian(movement.GetRawAxis(0) * -1.0, rotation.GetRawAxis(0) * -1.0, movement.GetRawAxis(1) * -1.0, GetHeading());
 	//robotdrive.MecanumDrive_Cartesian(movement.GetRawAxis(0), movement.GetRawAxis(1), movement.GetRawAxis(3), GetHeading());
