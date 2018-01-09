@@ -35,10 +35,10 @@ void MecanumDrive::Execute() {
 
 
 	// DS Mode:
-	//mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick(), 0, 0.75);
+	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getRightJoystick(), 0, -1);
 
 	// Gamepad Mode:
-	mecanum->JoyDrive(oi->getLeftJoystick(), oi->getLeftJoystick(), 1, 0.75);
+	//mecanum->JoyDrive(oi->getLeftJoystick(), oi->getLeftJoystick(), 1, 0.75);
 
 
 	// Put the gyro heading on smart dashboard.
