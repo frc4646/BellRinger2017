@@ -32,9 +32,9 @@ void RunRinger::Execute() {
 	 * this combo, we couldn't even run the ringer. Well, if we were missing the second part (the else
 	 * statement), we would not be able to stop the ringer. Ever. Which would be unfortunate.
 	 */
-	if (oi->getMechanismJoystick().GetTrigger()){
+	if (oi->getLeftJoystick().GetTrigger()){
 		// Set the ringer speed to 1.
-		ringer->SetRingerSpeed((oi->getMechanismJoystick().GetThrottle() / 2));
+		ringer->SetRingerSpeed((oi->getLeftJoystick().GetThrottle() / 2));
 	}
 	// OTHERWISE...
 	else{
