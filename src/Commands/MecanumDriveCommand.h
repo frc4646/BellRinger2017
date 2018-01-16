@@ -4,9 +4,9 @@
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class MecanumDrive: public CommandBase {
+class MecanumDriveCommand: public CommandBase {
 public:
-	MecanumDrive();
+	MecanumDriveCommand();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

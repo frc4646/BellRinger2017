@@ -78,7 +78,7 @@ public:
 	}
 
 	void TestPeriodic() override {
-		frc::LiveWindow::GetInstance()->Run();
+		//frc::LiveWindow::GetInstance()->Run();
 	}
 
 private:

@@ -1,10 +1,10 @@
-#include "MecanumDrive.h"
+#include <Commands/MecanumDriveCommand.h>
 #include <Subsystems/MecanumDriveTrain.h>
 #include "WPILib.h"
 #include "../PinEnums.h"
 #include "OI.h"
 
-MecanumDrive::MecanumDrive() :
+MecanumDriveCommand::MecanumDriveCommand() :
 	CommandBase("MecanumDriveTrain") {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
@@ -12,7 +12,7 @@ MecanumDrive::MecanumDrive() :
 }
 
 // Called just before this Command runs the first time
-void MecanumDrive::Initialize() {
+void MecanumDriveCommand::Initialize() {
 	// Tell mecanum to stop.
 	/*
 	 * This line basically tells mecanum to run it's "Stop()" method with no arguments.
@@ -26,7 +26,7 @@ void MecanumDrive::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void MecanumDrive::Execute() {
+void MecanumDriveCommand::Execute() {
 	// Tell mecanum joydrive method to run with joysticks.
 	/*
 	 * Like the above commands, this also talks to the mecanum subsystem. This time it actually
@@ -50,12 +50,12 @@ void MecanumDrive::Execute() {
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool MecanumDrive::IsFinished() {
+bool MecanumDriveCommand::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void MecanumDrive::End() {
+void MecanumDriveCommand::End() {
 	// Tell mecanum to stop when the robot is disabled in case the joysticks are tilted when we disable.
 	/*
 	 * I kinda told you about this above. Look up.
@@ -65,7 +65,7 @@ void MecanumDrive::End() {
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void MecanumDrive::Interrupted() {
+void MecanumDriveCommand::Interrupted() {
 	// Ditto the comment in End.
 	/*
 	 * Seriously, look up!

@@ -1,4 +1,4 @@
-#include <Commands/MecanumDrive.h>
+#include <Commands/MecanumDriveCommand.h>
 #include <Subsystems/MecanumDriveTrain.h>
 #include "../RobotMap.h"
 
@@ -13,29 +13,29 @@ MecanumDriveTrain::MecanumDriveTrain(MotorPin w1, MotorPin w2, MotorPin w3, Moto
 	robotdrive(frontleftwheel, frontrightwheel, backleftwheel, backrightwheel)
 {
 	gyro.Calibrate();
-	backrightwheel.SetInverted(true);
-	frontrightwheel.SetInverted(true);
+	backleftwheel.SetInverted(true);
+	//backrightwheel.SetInverted(true);
 }
 
 void MecanumDriveTrain::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
-	SetDefaultCommand(new MecanumDrive());
+	SetDefaultCommand(new MecanumDriveCommand());
 }
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
 void MecanumDriveTrain::JoyDrive(Joystick& rotation, Joystick& movement, int mode, int speed) {
-	robotdrive.MecanumDrive_Cartesian(rotation.GetRawAxis(0) * speed, rotation.GetRawAxis(1) * speed, rotation.GetRawAxis(2) * speed, GetHeading());
+	robotdrive.DriveCartesian(rotation.GetRawAxis(0) * speed, rotation.GetRawAxis(1) * speed, movement.GetRawAxis(0) * speed, GetHeading());
 }
 
 void MecanumDriveTrain::AutoDrive(double x, double y, double rot) {
-	robotdrive.MecanumDrive_Cartesian(x, rot, y, GetHeading());
+	robotdrive.DriveCartesian(x, rot, y, GetHeading());
 }
 
 void MecanumDriveTrain::DriveInDirection(double speed, double theta) {
-	robotdrive.MecanumDrive_Polar(speed, theta, GetHeading());
+	robotdrive.DrivePolar(speed, theta, GetHeading());
 }
 
 double MecanumDriveTrain::GetHeading() {
